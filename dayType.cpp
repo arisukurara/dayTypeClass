@@ -14,12 +14,12 @@ string dayType::getDay() const {
 
 string dayType::getNextDay()  const {
 	for (int i = 0; i < 7; i++) {
-		if (currentDay == DAYS[i]) { // to prevent going out of bounds
+		if (currentDay == daysOfWeek[i]) { // to prevent going out of bounds
 			if (i == 6) {
-				return DAYS[0];
+				return daysOfWeek[0];
 			}
 			else { //
-				return DAYS[i + 1];
+				return daysOfWeek[i + 1];
 			}
 		}
 	}
@@ -27,12 +27,12 @@ string dayType::getNextDay()  const {
 
 string dayType::getPreviousDay()  const {
 	for (int i = 0; i < 7; i++) {
-		if (currentDay == DAYS[i]) {  // to prevent going out of bounds
+		if (currentDay == daysOfWeek[i]) {  // to prevent going out of bounds
 			if (i == 0) {
-				return DAYS[6];
+				return daysOfWeek[6];
 			}
 			else {
-				return DAYS[i - 1];
+				return daysOfWeek[i - 1];
 			}
 		}
 	}
@@ -41,7 +41,7 @@ string dayType::getPreviousDay()  const {
 string dayType::calculateDay(int numberOfDays)  const {
 	int dayPointer;
 	for (int i = 0; i < 7; i++) {
-		if (currentDay == DAYS[i]) {
+		if (currentDay == daysOfWeek[i]) {
 			dayPointer = i;
 		}
 	}
@@ -56,5 +56,5 @@ string dayType::calculateDay(int numberOfDays)  const {
 		newDayPointer = (newDay % 7) + 7;
 	}
 	
-	return DAYS[newDayPointer];
+	return daysOfWeek[newDayPointer];
 }

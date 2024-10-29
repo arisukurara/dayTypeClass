@@ -14,7 +14,7 @@ public:
 	string calculateDay(int numberOfDays)  const;
 private:
 	string currentDay;
-	const string DAYS[7] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+	const string daysOfWeek[7] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
 };
 
